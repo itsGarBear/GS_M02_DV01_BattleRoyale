@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviourPun
             photonView.RPC("SpawnPlayer", RpcTarget.All);
     }
 
+    [PunRPC]
     void SpawnPlayer()
     {
         GameObject playerObj = PhotonNetwork.Instantiate(playerPrefabLocation, spawnPoints[Random.Range(0, spawnPoints.Length)].position, Quaternion.identity);
